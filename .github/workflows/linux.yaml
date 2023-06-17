@@ -36,4 +36,4 @@ jobs:
         run: npm run build-electron 
         
       - name: Create release
-        run: npx electron-builder --linux --publish=always
+        run: node_modules/.bin/electron-builder --linux --publish=always
