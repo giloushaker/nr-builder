@@ -33,7 +33,7 @@ jobs:
         run: npm ci
         
       - name: Build application
-        run: npm run build
+        run: npm run build-electron
         
       - name: Create release
         run: npm exec electron-builder --mac --publish=always
