@@ -18,10 +18,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with: 
-          repository: vflam/nr-editor
+          repository: vflam/nuxt-nr
           submodules: true
+          ref: nuxt3-migration
           token: ${{ secrets.GH_TOKEN }}
           fetch-depth: 1
+          
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
@@ -31,7 +33,7 @@ jobs:
         run: npm ci
         
       - name: Build application
-        run: npm run build
+        run: npm run build-electron 
         
       - name: Create release
         run: npx electron-builder --linux --publish=always
