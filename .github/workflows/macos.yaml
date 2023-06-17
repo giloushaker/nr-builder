@@ -36,4 +36,4 @@ jobs:
         run: npm run build
         
       - name: Create release
-        run: npx electron-builder --mac --publish=always
+        run: npm exec electron-builder --mac --publish=always
