@@ -14,3 +14,4 @@ Browse to a catalogue and select it, it will then import all the catalogues from
 
 Note:
 This is only for testing data, not for making rosters/army lists.
+For making army lists, its recommended to use the web version, available at https://newrecruit.eu
