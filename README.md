@@ -1,17 +1,13 @@
 # Usage:
 Open the executable
 
-Dont bother creating an account, you dont need one and it wont work
+The initial page should show the systems from `C:\Users\Nathan\BattleScribe\data`
 
-Open the dropdown Under "1 - Please, choose the Game Systems you are interested in below."
+If the system you want to use isn't in there, click "Add" and browse to a catalogue or gst, it will then import all the catalogues from the same folder
 
-If you already have some systems imported and the initial page doesn't show up, Click on the dropdown on the top letf of the screen then select "Install More Games"
-
-Click "Load System"
-
-Browse to a catalogue and select it, it will then import all the catalogues from the same folder
-
+Click on the system you want to use (It may freeze for a bit while loading it)
 
 Note:
 This is only for testing data, not for making rosters/army lists.<br/>
 For making army lists, its recommended to use the web version, available at https://newrecruit.eu
+
