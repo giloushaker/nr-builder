@@ -1,4 +1,4 @@
-name: linux Release
+name: windows Release
 
 on:
   workflow_dispatch:
