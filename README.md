@@ -1,7 +1,8 @@
 # Usage:
 Open the executable
 
-The initial page should show the systems from `{home}/BattleScribe/data` (can be changed in Options -> Development -> Change sytems folder)
+The initial page should show the systems from `{home}/BattleScribe/data`  
+(can be changed in Options -> Development -> Change sytems folder)
 
 If the system you want to use isn't in there, click "Add" and browse to a catalogue or gst, it will then import all the catalogues from the same folder
 
