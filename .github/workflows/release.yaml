@@ -12,8 +12,6 @@ jobs:
         include:
           - os: windows-latest
             platform_flag: --win
-          - os: macos-latest
-            platform_flag: --mac
           - os: ubuntu-latest
             platform_flag: --linux
     env:
