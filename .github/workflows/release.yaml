@@ -1,0 +1,48 @@
+name: Multi-platform Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+        include:
+          - os: windows-latest
+            platform_flag: --win
+          - os: macos-latest
+            platform_flag: --mac
+          - os: ubuntu-latest
+            platform_flag: --linux
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - name: Setup env
+        run: |
+          git config --global credential.helper store
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          repository: vflam/nuxt-nr
+          submodules: true
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 1
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20.11.0
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build-electron
+
+      - name: Create release
+        run: npm exec electron-builder ${{ matrix.platform_flag }} --publish=always
