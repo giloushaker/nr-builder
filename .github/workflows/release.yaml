@@ -8,12 +8,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
+        os: [windows-latest, ubuntu-latest, macos-latest]
         include:
           - os: windows-latest
             platform_flag: --win
           - os: ubuntu-latest
             platform_flag: --linux
+          - os: macos-latest
+            platform_flag: --mac
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
