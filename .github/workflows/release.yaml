@@ -2,6 +2,11 @@ name: Multi-platform Release
 
 on:
   workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to build from"
+        required: true
+        default: "master"
 
 jobs:
   build:
@@ -16,8 +21,10 @@ jobs:
             platform_flag: --linux
           - os: macos-latest
             platform_flag: --mac
+
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
     steps:
       - name: Setup env
         run: |
@@ -29,6 +36,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: vflam/nuxt-nr
+          ref: ${{ github.event.inputs.branch }}
           submodules: true
           token: ${{ secrets.GH_TOKEN }}
           fetch-depth: 1
